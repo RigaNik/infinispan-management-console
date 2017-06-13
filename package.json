@@ -92,10 +92,7 @@
       "http-proxy": "npm:http-proxy@^1.14.0",
       "jquery": "npm:jquery@^3.1.0",
       "lodash": "npm:lodash@^4.17.4",
-      "nya-bootstrap-select": "npm:nya-bootstrap-select@^2.0.11",
       "patternfly": "npm:patternfly@4.0.0-rc.1",
-      "selectize": "npm:selectize@^0.12.4",
-      "ui-select": "npm:ui-select@^0.19.8",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {
