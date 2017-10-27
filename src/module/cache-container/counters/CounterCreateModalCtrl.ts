@@ -10,7 +10,7 @@ export class CounterCreateModalCtrl {
   errorExecuting: boolean = false;
   errorDescription: string = "";
   successfulOperation: boolean = false;
-  counter: ICounter = new Counter(null, null, null, null, null, null);
+  counter: ICounter = new Counter(null, null, null, null, null, 0, 10);
 
   constructor(private container: ICacheContainer, private counterService: CounterService) {
 
@@ -23,11 +23,11 @@ export class CounterCreateModalCtrl {
   }
 
   getCounterTypes(): string [] {
-    return ["weak", "strong"];
+    return ["WEAK", "STRONG"];
   }
 
   getStorageTypes(): string [] {
-    return ["volatile", "persistent"];
+    return ["VOLATILE", "PERSISTENT"];
   }
 
 }

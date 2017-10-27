@@ -66,35 +66,35 @@
           <input ng-model="modalCtrl.counter.initialValue"
                  class="form-control"
                  type="text"
-                 placeholder="Name"
+                 placeholder="Initial value"
                  id-generator="create.counter.initialValue"/>
         </div>
         <div class="col-md-2 pull-left" style="padding-left: 0">
           <i class="fa fa-info-circle ng-scope" uib-tooltip="Counter initial value"></i>
         </div>
       </div>
-      <collapsible>
-        <span translate>PARAMS</span>
+      <collapsible ng-if="modalCtrl.counter.isStrong()">
+        <span>Bound values</span>
         <div>
-          <div class="form-group" ng-repeat="param in modalCtrl.parameters">
-            <label class="col-md-4 control-label">Parameter {{$index + 1}}:</label>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Enter bound values</label>
             <div class="col-md-3">
-              <input ng-model="param.name"
+              <input ng-model="modalCtrl.counter.lowerBound"
                   class="form-control"
                   type="text"
-                  placeholder="Name"
-                  id-generator="create.param.{{$index}}.name"/>
+                  placeholder="Lower Bound"
+                  id-generator="create.lower_bound"/>
             </div>
             <div class="col-md-3">
-              <input ng-model="param.value"
+              <input ng-model="modalCtrl.counter.upperBound"
                   class="form-control"
                   type="text"
-                  placeholder="Value"
-                  id-generator="create.param.{{$index + 1}}.value"/>
+                  placeholder="Upper Bound"
+                  id-generator="create.upper_bound"/>
             </div>
             <div class="col-md-2 pull-left" style="padding-left: 0">
               <i class="fa fa-info-circle ng-scope"
-                  uib-tooltip="Parameter {{$index + 1}}"
+                  uib-tooltip="Strong counter bound values"
                   tooltip-animation="true"
                   tooltip-placement="top">
               </i>

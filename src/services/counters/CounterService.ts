@@ -21,12 +21,12 @@ export class CounterService {
   }
 
   createCounter(type: string, name: string, storage: string): ICounter {
-    return new Counter(type, name, storage, 0, 5, "[0,10]");
+    return new Counter(type, name, storage, 0, 5, 0, 10);
   }
 
   getAllCounters(cacheContainer: ICacheContainer): ng.IPromise<ICounter[]> {
     let deferred: ng.IDeferred<any> = this.$q.defer();
-    let counters: ICounter [] = [this.createCounter("strong", "a-counter", "volatile"),this.createCounter("weak", "b-counter", "volatile")];
+    let counters: ICounter [] = [this.createCounter("STRONG", "a-counter", "VOLATILE"), this.createCounter("WEAK", "b-counter", "PERSISTENT")];
     deferred.resolve(counters);
     return deferred.promise;
   }

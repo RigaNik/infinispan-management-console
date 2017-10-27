@@ -5,5 +5,7 @@ export interface ICounter {
   getStorage(): string;
   getInitialValue(): number;
   getCurrentValue(): number;
-  getBounds(): string;
+  getLowerBound(): number;
+  getUpperBound(): number;
+  isStrong(): boolean
 }
