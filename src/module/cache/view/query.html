@@ -17,67 +17,8 @@
         </div>
         <div class="col-sm-12">
             <div class="row">
-                <div class="col-sm-6 col-lg-5">
-                    <h4>Query</h4>
-                    <textarea id="query-editor" class="form-control" rows="10"></textarea>
-                    <div>
-                        <button type="button" class="btn btn-default" ng-click="ctrl.loadQuery()">RUN QUERY</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-lg-5">
-                    <uib-tabset active="active">
-                        <uib-tab index="0">
-                            <uib-tab-heading>
-                                JSON
-                            </uib-tab-heading>
-                            <div class="panel panel-default">
-                              <editor editor="ctrl.editor" mode="javascript" read-only="true" line-numbers="true"></editor>
-                            </div>
-                        </uib-tab>
-                        <uib-tab index="1">
-                            <uib-tab-heading>
-                                Table
-                            </uib-tab-heading>
-                            <div class="panel panel-default">
-                                <!-- Default panel contents -->
-                                <div class="panel-heading">Query Results</div>
-
-                                <!-- Table -->
-                                <table class="datatable table table-striped table-bordered display">
-                                    <thead>
-                                    <tr>
-                                        <td>#</td>
-                                        <td>Heading 1</td>
-                                        <td>Heading 2</td>
-                                        <td>Heading 3</td>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Data 1</td>
-                                        <td>Data 2</td>
-                                        <td>Data 3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Data 1</td>
-                                        <td>Data 2</td>
-                                        <td>Data 3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Data 1</td>
-                                        <td>Data 2</td>
-                                        <td>Data 3</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </uib-tab>
-                    </uib-tabset>
+                <div class="col-sm-12">
+                    <query-panel cache-name="ctrl.cache.name"></query-panel>
                 </div>
             </div>
         </div>

@@ -2,9 +2,9 @@ import {App} from "../../ManagementConsole";
 import {CodeMirrorEditorCtrl} from "./CodeMirrorEditorCtrl";
 
 export class CodeMirrorEditor {
-
   bindings: any;
   controller: any;
+  controllerAs: string;
   templateUrl: string;
 
   constructor() {
@@ -15,6 +15,7 @@ export class CodeMirrorEditor {
       lineNumbers: "="
     };
     this.controller = CodeMirrorEditorCtrl;
+    this.controllerAs = 'ctrl';
     this.templateUrl = "components/editor/view/editor.html";
   }
 }

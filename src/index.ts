@@ -30,6 +30,7 @@ import "./components/cache-configuration/CacheConfiguration";
 import "./components/endpoint-configuration/EndpointConfiguration";
 import "./components/configuration-section/ConfigurationSection";
 import "./components/editor/CodeMirrorEditor";
+import "./components/query-panel/QueryPanel";
 import "./components/forms/field-info/FieldInfo";
 import "./components/forms/form-group/FormGroup";
 import "./components/memory/Memory";
@@ -76,6 +77,7 @@ App.element(document).ready(() => {
     "managementConsole.components.modals.information",
     "managementConsole.components.collapsible",
     "managementConsole.components.editor",
+    "managementConsole.components.query-panel",
     "managementConsole.services.authentication",
     "managementConsole.services.cache",
     "managementConsole.services.cache-config",

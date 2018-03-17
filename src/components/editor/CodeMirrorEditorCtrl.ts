@@ -1,16 +1,16 @@
-import CodeMirror = require("codemirror");
-import EditorFromTextArea = CodeMirror.EditorFromTextArea;
+import * as CodeMirror from "codemirror";
 import EditorConfiguration = CodeMirror.EditorConfiguration;
-import {EditorConfiguration} from "codemirror";
 
 export class CodeMirrorEditorCtrl implements ng.IComponentController {
-  editor: EditorFromTextArea;
+  static $inject = ['$scope'];
+  editor: any;
+  editorConfig: EditorConfiguration;
   mode: string = "javascript";
   readOnly: boolean;
   lineNumbers: boolean;
 
   constructor() {
-    let editorConfig: EditorConfiguration = <EditorConfiguration> {
+    this.editorConfig = <EditorConfiguration> {
       lineNumbers: this.lineNumbers,
       mode:  {
         name: this.mode,
@@ -18,6 +18,10 @@ export class CodeMirrorEditorCtrl implements ng.IComponentController {
       },
       readOnly: this.readOnly
     };
-    this.editor = CodeMirror.fromTextArea(<HTMLTextAreaElement>document.getElementById("editor"), editorConfig);
   }
+
+  $postLink(): void {
+    this.editor = CodeMirror.fromTextArea(<HTMLTextAreaElement>document.getElementById('editor'), this.editorConfig);
+  };
+
 }
