@@ -18,7 +18,30 @@
         <div class="col-sm-12">
             <div class="row">
                 <div class="col-sm-12">
-                    <query-panel cache-name="ctrl.cache.name"></query-panel>
+                    <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default">
+                            <uib-accordion-heading>
+                                POST <strong>/key</strong> Post key
+                            </uib-accordion-heading>
+                            <query-panel cache-name="{{ctrl.cache.name}}"></query-panel>
+                        </div>
+                    </uib-accordion>
+                    <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default">
+                            <uib-accordion-heading>
+                                GET <strong>/key</strong> GET results
+                            </uib-accordion-heading>
+                            <query-panel cache-name="{{ctrl.cache.name}}"></query-panel>
+                        </div>
+                    </uib-accordion>
+                    <uib-accordion close-others="oneAtATime">
+                        <div uib-accordion-group class="panel-default">
+                            <uib-accordion-heading>
+                                DELETE <strong>/delete/{id}</strong> Delete by id
+                            </uib-accordion-heading>
+                            <query-panel cache-name="{{ctrl.cache.name}}"></query-panel>
+                        </div>
+                    </uib-accordion>
                 </div>
             </div>
         </div>

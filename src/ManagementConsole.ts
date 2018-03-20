@@ -47,6 +47,8 @@ import IModalService = angular.ui.bootstrap.IModalService;
 import IAugmentedJQuery = angular.IAugmentedJQuery;
 import {LaunchTypeService} from "./services/launchtype/LaunchTypeService";
 import {IdGeneratorDirective} from "./components/directives/IdGeneratorDirective";
+import {CodeMirrorEditor} from "./components/editor/CodeMirrorEditor";
+import {QueryPanel} from "./components/query-panel/QueryPanel";
 
 const App: ng.IAngularStatic = angular;
 
@@ -89,6 +91,8 @@ module.directive("fileModel", () => {
 module.directive("vertilizeContainer", VertilizeContainerDirective.factory());
 module.directive("vertilize", VertilizeDirective.factory());
 module.directive("idGenerator", IdGeneratorDirective.factory());
+module.directive("editor", CodeMirrorEditor.factory());
+module.directive("queryPanel", QueryPanel.factory());
 
 // @ngInject
 module.config(($urlRouterProvider: ng.ui.IUrlRouterProvider) => {
