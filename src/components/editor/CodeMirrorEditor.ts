@@ -1,21 +1,20 @@
 import * as CodeMirror from "codemirror";
-import {IScope} from "../../common/IScopeService";
 import IAugmentedJQuery = angular.IAugmentedJQuery;
 import IDirective = angular.IDirective;
 import IDirectiveFactory = angular.IDirectiveFactory;
 import {EditorConfiguration} from "codemirror";
 
 export class CodeMirrorEditor implements IDirective {
-  controller: any;
-  controllerAs: string;
   templateUrl: string;
-  restrict = 'E';
   editorConfig: EditorConfiguration;
-  editor: any;
-
+  scope: Object;
+  private editor: any;
 
   constructor() {
     this.templateUrl = "components/editor/view/editor.html";
+    this.scope = {
+      search: "="
+    };
   }
 
   public static factory(): IDirectiveFactory {
@@ -25,7 +24,7 @@ export class CodeMirrorEditor implements IDirective {
     return directive;
   }
 
-  public link: Function = (scope: IScope, element: IAugmentedJQuery, attrs) => {
+  public link: Function = (scope, element: IAugmentedJQuery, attrs) => {
     this.editorConfig = <EditorConfiguration> {
       lineNumbers: attrs.lineNumbers,
       mode: {
@@ -36,5 +35,7 @@ export class CodeMirrorEditor implements IDirective {
     };
 
     this.editor = CodeMirror.fromTextArea(<HTMLTextAreaElement>element.find('textarea')[0], this.editorConfig);
+    // @vblagoje ovde cemo da menjamo vrednost, verovatno na watch
+    // this.editor.setValue(JSON.stringify(data, null, "\t"));
   };
 }
